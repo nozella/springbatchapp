@@ -24,11 +24,11 @@
         <property name="keys" value="items"/>
     </bean>
 
-    <bean id="customTasklet" class="br.com.nozella.springbatchapp.tasklets.CustomTasklet"/>
     <bean id="decider" class="br.com.nozella.springbatchapp.deciders.CustomDecider" />
     <bean id="customReader" class="br.com.nozella.springbatchapp.readers.CustomReader" />
 	<bean id="customProcessor" class="br.com.nozella.springbatchapp.processors.CustomProcessor" />
 	<bean id="customWriter" class="br.com.nozella.springbatchapp.writers.CustomWriter" />
+    <bean id="customTasklet" class="br.com.nozella.springbatchapp.tasklets.CustomTasklet"/>
 
 	<batch:job id="reportJob" job-repository="jobRepository">
         <batch:decision id="decision" decider="decider">
@@ -44,6 +44,7 @@
                 <batch:listener ref="promotionListener"/>
             </batch:listeners>
 		</batch:step>
+
         <batch:step id="step2">
             <batch:tasklet ref="customTasklet" />
         </batch:step>

@@ -13,6 +13,9 @@ import org.springframework.stereotype.Component;
 public class App extends Thread {
 	
 	public static void main(String[] args) {
+	    if (args != null && args.length > 0) {
+            System.out.println(args[0]);
+        }
         final ApplicationContext context = new ClassPathXmlApplicationContext("job-report.xml");
         final App app = context.getBean(App.class);
         app.run();
