@@ -1,4 +1,4 @@
-package br.com.nozella.springbatchapp;
+package br.com.nozella.springbatchapp.main;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobExecution;
