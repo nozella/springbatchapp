@@ -1,16 +1,17 @@
-package br.com.nozella.springbatchapp.readers;
+package br.com.nozella.springbatchapp.task.readers;
 
 import br.com.nozella.springbatchapp.model.Report;
 import org.springframework.batch.item.ItemReader;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Marcos
+ * Created by Marcos Nozella
  * on 19/06/2017 21:00.
  */
-
+@Component
 public class CustomReader implements ItemReader<Report> {
 
     private List<Report> reportList;

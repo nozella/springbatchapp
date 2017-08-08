@@ -1,13 +1,18 @@
-package br.com.nozella.springbatchapp.writers;
+package br.com.nozella.springbatchapp.task.writers;
 
 import br.com.nozella.springbatchapp.model.Report;
 import org.springframework.batch.core.StepExecution;
 import org.springframework.batch.core.annotation.BeforeStep;
 import org.springframework.batch.item.ExecutionContext;
 import org.springframework.batch.item.ItemWriter;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+/**
+ * Created by Marcos Nozella
+ */
+@Component
 public class CustomWriter implements ItemWriter<Report> {
 
     private StepExecution stepExecution;
@@ -19,14 +24,11 @@ public class CustomWriter implements ItemWriter<Report> {
 
 	@Override
 	public void write(List<? extends Report> items) throws Exception {
-
-		System.out.println("writer..." + items.size());		
+		System.out.println("writer..." + items.size());
 		for(Report item : items){
 			System.out.println(item);
 		}
-
         final ExecutionContext stepContext = this.stepExecution.getExecutionContext();
         stepContext.put("items", items);
 	}
-
 }

@@ -1,17 +1,20 @@
-package br.com.nozella.springbatchapp.deciders;
+package br.com.nozella.springbatchapp.task.deciders;
 
 import org.springframework.batch.core.JobExecution;
 import org.springframework.batch.core.StepExecution;
 import org.springframework.batch.core.job.flow.FlowExecutionStatus;
 import org.springframework.batch.core.job.flow.JobExecutionDecider;
 import org.springframework.batch.item.ExecutionContext;
+import org.springframework.stereotype.Component;
 
 /**
- * Created by Marcos
+ * Created by Marcos Nozella
  * on 19/06/2017 23:05.
  */
+@Component
 public class CustomDecider implements JobExecutionDecider {
 
+    @SuppressWarnings("unused")
     private static final String ABORT = "ABORT";
     private static final String CONTINUE = "CONTINUE";
 
